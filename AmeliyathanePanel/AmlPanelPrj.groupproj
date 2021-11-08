@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1C15CE09-B8E4-4708-B132-0BDA432F0F3B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AmeliyathanePanel.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AmeliyathanePanel">
+        <MSBuild Projects="AmeliyathanePanel.dproj"/>
+    </Target>
+    <Target Name="AmeliyathanePanel:Clean">
+        <MSBuild Projects="AmeliyathanePanel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AmeliyathanePanel:Make">
+        <MSBuild Projects="AmeliyathanePanel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AmeliyathanePanel"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AmeliyathanePanel:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AmeliyathanePanel:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
